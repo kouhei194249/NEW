@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Focades\Routes;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,4 +13,4 @@
 |
 */
 
-Route::get('/posts', 'PostController@index');
+Route::get('/', 'PostController@index');
