@@ -8,28 +8,3 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="/css/app.css">
     </head>
-     <body>
-        <h1>Blog Name</h1>
-        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-            @csrf
-            @method('DELETE')
-            <button type="submit">delete</button> 
-        </form>
-            <div class="title">
-                <h2>Title</h2>
-                <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"/>
-                <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
-            </div>
-            <div class="body">
-                <h2>Body</h2>
-                <textarea name="post[body]" placeholder="今日も1日お疲れさまでした。">{{ old('post.body') }}</textarea>
-                <p class="body__error" style="color:red">{{ $errors->first('post.body') }}</p>
-            </div>
-            <input type="submit" value="保存"/>
-        </form>
-        <div class="back">[<a href="/">back</a>]</div>
-    </body>
-</html>
-
-   
