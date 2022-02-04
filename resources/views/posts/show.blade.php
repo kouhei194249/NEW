@@ -11,8 +11,11 @@
      <body>
         <h1>Blog Name</h1>
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-        <form action="/posts" method="POST">
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
             @csrf
+            @method('DELETE')
+            <button type="submit">delete</button> 
+        </form>
             <div class="title">
                 <h2>Title</h2>
                 <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"/>
