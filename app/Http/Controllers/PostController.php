@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest; 
 
 class PostController extends Controller
 {
@@ -15,4 +15,3 @@ class PostController extends Controller
     {
        return view('posts/show')->with(['post' => $post]);
     }
-}
